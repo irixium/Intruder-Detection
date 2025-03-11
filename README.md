@@ -1,2 +1,7 @@
 # Intruder-Detection
-Automatic real-time video based surveillance system. Automatically detects intruders trying to enter one's house. Users can add their members to a whitelist by uploading their images and creating their 'profiles'
+Automatic real-time video based surveillance system. Users can add their members to a whitelist by uploading their images and creating their 'profiles'
+
+# How to setup and use:
+1) Run the 'deepface.ipynb' notebook , upload your images to a folder and create the necessary embedding and save as a .npy file for later use. Can create multiple profiles. Make sure to use proper file paths.
+2) After you have your embeddings, you need to run the main notebook and create the final profiles list including the embeddings of each person you want to be in the trusted list. In the notebook, for proof of concept, I have used a compass sensor to detect movement of the door which signifies the opening of a door. Realistically , a simple motion sensor on the camera attached will be the optimal solution.
+3) Moving on, once such an action is performed, the model runs face recognition on a few past frames(one per second, and this is a parameter which can be changed.). If any recognized person was found , then it is a valid entry, if not, then an alert is sent. Right now, alerts are simulated by just printing it the console, but of course for practical uses, a SMS/Email/Whatsapp message or an notification on the app(if this is turned to an app) will be sent to the user along with the image of the person who tried to open the door. The owner can then either approve in which case nothing happens, or of course take necessary action.

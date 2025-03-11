@@ -1,0 +1,7 @@
+numpy
+scipy
+deepface
+opencv-python
+pandas
+matplotlib
+google-colab
